@@ -1,0 +1,55 @@
+
+.menu {height: 100%;}
+
+.menu ul {
+	height: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: flex-start;
+	justify-content: center;
+	list-style-type: none;
+	position: relative;
+	padding: 0;
+}
+
+.menu ul li {
+	margin: 20px 0;
+	position: relative;
+	width: 100%;
+}
+
+.menu ul li button {
+	padding: 8px 20px;
+	background: #888;
+	color: #fff;
+	text-decoration: none;
+	transition: all .5s;
+	border: none;
+	width: 100%;
+}
+
+.menu ul li button:hover {
+	text-decoration: none;
+	background: #555;
+}
+
+.menu ul li button + div {
+	display: none;
+	position: absolute;
+	top: 0;
+	background: #eee;
+	right: 0;
+	z-index: 5;
+	width: fit-content;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid #333;
+}
+.menu ul li button + div.show {
+	display: block;
+}
