@@ -1,3 +1,12 @@
+body {
+	background: url('http://on-desktop.com/wps/Nature_Forest_Green_forest_004945_.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #fff;
+}
+
 
 .menu {height: 100%;}
 
@@ -22,20 +31,28 @@
 	position: relative;
 	width: 100%;
 }
+.menu ul li:first-child{
+	margin-top:0;}
+.menu ul li:last-child {
+	margin-bottom:0;
+}
 
 .menu ul li button {
 	padding: 8px 20px;
-	background: #888;
+	background: #2d995b;
 	color: #fff;
 	text-decoration: none;
 	transition: all .5s;
 	border: none;
 	width: 100%;
+	border-radius: 4px;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .menu ul li button:hover {
 	text-decoration: none;
-	background: #555;
+	background: #38c172;
 }
 
 .menu ul li button + div {
@@ -43,13 +60,87 @@
 	position: absolute;
 	top: 0;
 	background: #eee;
-	right: 0;
+	left: 100%;
 	z-index: 5;
-	width: fit-content;
+	width: max-content;
 	padding: 10px;
 	border-radius: 10px;
 	border: 1px solid #333;
+	margin-left: 30px;
 }
 .menu ul li button + div.show {
 	display: block;
+}
+.menu ul li button span {
+	position: absolute;
+	right: 20px;
+}
+#main-group, #ch-group {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.box-group {
+	position: relative;
+}
+
+.item-group,
+.item-group:focus
+{
+	background: #333;
+	padding: 10px;
+	margin: 20px 10px;
+	color: #fff;
+	border-radius: 10px;
+	text-transform: uppercase;
+	position: relative;
+	border: none;
+	outline: none;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+
+.item-group.parent,
+.item-group.parent:focus {
+	background: #666;
+	box-shadow: 0 0 10px 0 #38c172, inset 0 0 4px 0 #38c172;
+}
+
+.option {
+	display: none;
+	position: absolute;
+	top: -12px;
+	left: 0;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.option.show{
+	display: flex;
+}
+
+.option .edit,
+.option .remove {
+	position: relative;
+	margin: 0 2px;
+	padding: 2px 7px;
+	border-radius: 20%;
+	transition: all .5s;
+}
+
+.option .edit {
+	background: #38c172;
+}
+.option .remove {
+	background: #f44336;
+}
+
+
+.option .edit:hover,
+.option .remove:hover {
+	opacity: .7;
 }
