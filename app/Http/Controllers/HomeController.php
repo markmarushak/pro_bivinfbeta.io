@@ -52,9 +52,10 @@ class HomeController extends Controller
         return response()->json($data);
     }
 
-    public function section(Request $request = null)
+    public function section(Request $request)
     {
-        if($request == null) {
+        $data = $request->all();
+        if(empty($data)) {
             $data = $this->section->get();
         }else {
             $data = $this->section->where('section_id','=',$request->input('id'))->get();

@@ -11,8 +11,9 @@ $(document).ready(function () {
 
     $('#add_section select').change(function () {
         var s = $('#add_section');
-        s.find('.text').text('');
-        $.get('/section',{id: $(this).find('option:selected').val()}, function (data) {
+        s.find('.text').text(' ');
+        var id = $(this).find('option:selected').val();
+        $.get('/section',{id: id}, function (data) {
             s.find('.text').text(data[0].text);
         });
     });
