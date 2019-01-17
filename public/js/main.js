@@ -5,7 +5,10 @@ $(document).ready(function () {
         el.preventDefault();
         $('.menu div').removeClass('show');
         $(this).next().toggleClass('show');
+        var drop = $(this).next(),
+            h = $(document).height();
 
+        if(h < )
     });
 
     $('.menu a').click(function (el) {

@@ -80,10 +80,6 @@ body {
 	box-shadow: 0 0 10px 1px #2d995b, inset 0 0  10px 1px #2d995b;
 	border: 1px solid #2d995b;
 }
-.menu ul li:last-child button + div {
-	top: auto;
-	bottom: calc(100% - 200px);
-}
 .menu ul li button + div.show {
 	display: block;
 }
@@ -97,6 +93,7 @@ body {
 	color: #fff;
 	text-shadow: 0 0 2px;
 	transition: all .5s;
+	text-transform: uppercase;
 }
 .menu ul ul li a:hover,
 .menu ul ul li a:focus {
