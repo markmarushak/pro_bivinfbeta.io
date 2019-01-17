@@ -29,6 +29,7 @@
                         <div class="name"></div>
                         <div class="price"></div>
                         <div class="time"></div>
+                        <div class="region"></div>
                         <div class="text"></div>
                     </div>
                 </div>

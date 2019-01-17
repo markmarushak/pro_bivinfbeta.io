@@ -12,18 +12,14 @@ $(document).ready(function () {
     $('.menu a').click(function (el) {
         el.preventDefault();
         var c = $('#content');
-
-        c.find('.price').html('');
-        c.find('.time').html('');
-        c.find('.text').html('');
-
+        c.find('.name').html('<h4>'+$(this).text()+'</h4>');
+        c.find('.price, .time, .region, .text').html('');
         $('.menu div').removeClass('show');
         $.get('/content', {id: $(this).attr('data-id')}, function (data) {
-            console.log(data);
-            c.find('.price').append('<h4>стоимость :'+data[0].price+'</h4>');
-            c.find('.time').append('<h4>сроки исполнения :'+data[0].time+'</h4>');
-            c.find('.text').append('<h5>описание услуги :</h5><p>'+data[0].text+'</p>');
-
+            c.find('.price').append('<h5>-- стоимость --</h5>'+data[0].price+' руб.');
+            c.find('.time').append('<h5>-- сроки исполнения --</h5>'+data[0].time);
+            c.find('.region').append('<h5>-- Регион исполнения --</h5>'+data[0].region);
+            c.find('.text').append('<h5>-- описание услуги --</h5><p>'+data[0].text+'</p>');
         });
     });
 

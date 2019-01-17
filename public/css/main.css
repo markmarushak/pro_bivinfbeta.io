@@ -170,3 +170,12 @@ body {
 .option .remove:hover {
 	opacity: .7;
 }
+
+#content > *:not(.text)
+{
+	text-transform: uppercase;
+	background: gold;
+	color: #333;
+	padding: 4px;
+	border-radius: 10px;
+}

@@ -36,7 +36,7 @@
                                 </label>
                             </div>
 
-                            <div class="form-group col-sm-3">
+                            <div class="form-group col-sm-2">
                                 <label>
                                     <span>
                                         стоимость услуги
@@ -45,12 +45,21 @@
                                 </label>
                             </div>
 
-                            <div class="form-group col-sm-3">
+                            <div class="form-group col-sm-2">
                                 <label>
                                     <span>
                                         сроки выполнения
                                     </span>
                                     <input type="text" name="time" class="form-control time" required>
+                                </label>
+                            </div>
+
+                            <div class="form-group col-sm-2">
+                                <label>
+                                    <span>
+                                        Регион исполнения
+                                    </span>
+                                    <input type="text" name="region" class="form-control region" required>
                                 </label>
                             </div>
 
