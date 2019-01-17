@@ -19,6 +19,7 @@ Route::get('/test', 'HomeController@test')->name('test');
 Route::get('/content', 'HomeController@content');
 Route::get('/section', 'HomeController@section');
 
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>'auth'], function (){
     Route::get('/','PageController@index')->name('main-group');
 

@@ -7,8 +7,6 @@ $(document).ready(function () {
         $(this).next().toggleClass('show');
         var drop = $(this).next(),
             h = $(document).height();
-
-        if(h < )
     });
 
     $('.menu a').click(function (el) {
@@ -28,4 +26,11 @@ $(document).ready(function () {
 
         });
     });
+
+    $.get('/section',function(data){
+        for (var i = data.length - 1; i >= 0; i--) {
+            $('#'+data[i].section_id+' p').append(data[i].text);
+        }
+    });
+
 });

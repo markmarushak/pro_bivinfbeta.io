@@ -37,15 +37,15 @@
                     <div class="attention">
 
                         <section id="1">
-                            <p>@if(!empty($section[0]['text'])){{ $section[0]['text'] }} @endif</p>
+                            <p></p>
                         </section>
 
-                        <section>
-                            <p>@if(!empty($section[1]['text'])){{ $section[1]['text'] }} @endif</p>
+                        <section id="2">
+                            <p></p>
                         </section>
 
-                        <section>
-                            <p>@if(!empty($section[2]['text'])){{ $section[2]['text'] }} @endif</p>
+                        <section id="3">
+                            <p></p>
                         </section>
                     </div>
                 </div>
