@@ -32,7 +32,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home',[
+            'menu' => $this->mg,
+            'section' => $this->section->get()->toArray()
+        ]);
     }
 
     public function test()
