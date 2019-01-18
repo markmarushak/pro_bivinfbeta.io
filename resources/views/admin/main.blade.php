@@ -70,8 +70,8 @@
                                 </label>
                             </div>
 
-                            <div class="form-group col-sm-12">
-                                <textarea name="text" id="" cols="30" rows="10" class="form-control text"></textarea>
+                            <div class="form-group col-sm-12" id="content_text">
+                                <textarea name="text" cols="30" rows="10" class="form-control text"></textarea>
                             </div>
 
                         </div>
@@ -112,7 +112,7 @@
                             </div>
 
 
-                            <div class="form-group col-sm-12">
+                            <div class="form-group col-sm-12" id="section_text">
                                 <textarea name="text" cols="30" rows="10" class="form-control text"></textarea>
                             </div>
 

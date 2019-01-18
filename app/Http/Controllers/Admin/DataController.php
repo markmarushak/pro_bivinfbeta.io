@@ -24,6 +24,7 @@ class DataController extends Controller
         $this->section = $section;
         $this->content = $content;
         $this->mainGroup = $mainGroup;
+        $this->middleware('auth');
     }
 
     public function addMainGroup(Request $request)
@@ -35,20 +36,22 @@ class DataController extends Controller
 
     public function addContent(Request $request)
     {
-        if ($this->content->where('group_id', '=', $request->input('group_id'))->exists()) {
-            DB::table($this->content->getTable())->where('group_id','=',$request->input('group_id'))->update($request->all());
+        parse_str($request->input('data'), $data);
+        if ($this->content->where('group_id', '=', $data['group_id'])->exists()) {
+            DB::table($this->content->getTable())->where('group_id','=',$data['group_id'])->update($data);
         }else {
-            DB::table($this->content->getTable())->insert($request->all());
+            DB::table($this->content->getTable())->insert($data);
         }
         echo 'true';
     }
 
     public function addSection(Request $request)
     {
-        if ($this->section->where('section_id', '=', $request->input('section_id'))->exists()) {
-            $this->section->where('section_id','=',$request->input('section_id'))->update($request->all());
+        parse_str($request->input('data'), $data);
+        if ($this->section->where('section_id', '=', $data['section_id'])->exists()) {
+            $this->section->where('section_id','=',$data['section_id'])->update($data);
         }else {
-            $this->section->insert($request->all());
+            $this->section->insert($data);
         }
         echo 'true';
     }
