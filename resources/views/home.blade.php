@@ -7,11 +7,13 @@
 
                 <div class="col-sm-4">
                     <nav class="menu">
+                        <button class="menu-button-mobi" id="bars"><i class="fas fa-bars"></i></button>
                         <ul>
                             @foreach($menu->where('main_id',0)->get()->toArray() as $item)
                                 <li>
                                     <button class="drop">{{ $item['name'] }}</button>
                                     <div>
+                                        <button class="drop-button-mobi"><i class="fas fa-times"></i></button>
                                         <ul>
                                             @foreach($menu->getParent($item['id']) as $parent)
                                                 <li><a href="#" data-id="{{ $parent->id }}">{{$parent->name}}</a></li>
@@ -53,6 +55,15 @@
 
             </div>
         </div>
+    </div>
+
+    <div class="block-hide" id="popover_time_info">
+        Уважаемые заказчики! <br>
+        <b>Мы стараемся максимально быстро закрывать сделки. </b> <br>
+        Указаны максимально возжные  сроки сделки,  <br>
+        после которых снимается резерв средств в согласованном (Нами и Вами) ГАРАНТ СЕРВИСЕ. <br>
+
+        <b>На практике выходит быстрее максимально указанного срока выполнения. Или предупреждаем. И предлагаем иные пути решения каждого вопроса. </b>
     </div>
 @endsection
 

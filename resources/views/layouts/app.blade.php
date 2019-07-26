@@ -22,6 +22,9 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-loader">
+        <div class="loader"></div>
+    </div>
     <div id="app">
 
 

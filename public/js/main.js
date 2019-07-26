@@ -1,5 +1,32 @@
 $(document).ready(function () {
-    $('.menu button').append('<span><i class="fas fa-angle-down"></i></span>');
+    $('.menu ul li > button').append('<span><i class="fas fa-angle-down"></i></span>');
+
+    $('#bars').click(function(event) {
+        event.preventDefault();
+        var menu = $('.menu > ul');
+        if(!menu.is(':visible')){
+            if($(document).width() < 430){
+                $('body').append('<div class="bg-menu"></div>');
+                menu.css({
+                    'display': 'block',
+                    'top': '50px'
+                });
+            }
+            $(this).html('<i class="fas fa-times"></i>');
+            
+        }else{
+            $('.bg-menu').remove();
+            $(this).html('<i class="fas fa-bars"></i>');
+            menu.css({
+                    'display': 'none',
+                    'top': '50px'
+                });
+        }
+    });
+    $('.drop-button-mobi').click(function(event) {
+        event.preventDefault();
+        $(this).parent().removeClass('show');
+    });
 
 
 
@@ -17,13 +44,38 @@ $(document).ready(function () {
         c.find('.name').html('<h4>'+$(this).text()+'</h4>');
         c.find('.price, .time, .region, .text').html('');
         $('.menu div').removeClass('show');
+        $('.bg-loader').show();
         $.get('/content', {id: $(this).attr('data-id')}, function (data) {
             c.find('.price').append('<h5>-- стоимость --</h5>'+data[0].price+' руб.');
-            c.find('.time').append('<h5>-- сроки исполнения -- <a tabindex="0" class="popover-dismiss text-dark" role="button" data-toggle="popover"><i class="fas fa-info-circle"></i></a></h5>'+data[0].time);
+            c.find('.time').append('<h5>-- сроки исполнения -- <a tabindex="0" class="popover-dismiss text-dark info-loop" role="button" data-toggle="popover"><i class="fas fa-info-circle"></i></a></h5>'+data[0].time);
             c.find('.region').append('<h5>-- Регион исполнения --</h5>'+data[0].region);
             c.find('.text').append('<h5>-- описание услуги --</h5><p>'+data[0].text+'</p>');
             popover();
+            setTimeout(function() {$('.bg-loader').hide();},500)
         });
+
+        var menu = $('.menu > ul');
+
+        if($(document).width() < 430){
+            if(!menu.is(':visible')){
+                $('body').append('<div class="bg-menu"></div>');
+                menu.css({
+                    'display': 'block',
+                    'top': '50px'
+                });
+                $('#bars').html('<i class="fas fa-times"></i>');
+            }else{
+                $('.bg-menu').remove();
+                $('#bars').html('<i class="fas fa-bars"></i>');
+                menu.css({
+                        'display': 'none',
+                        'top': '50px'
+                    });
+            }
+        }
+            
+            
+        
 
     });
 
@@ -35,7 +87,12 @@ $(document).ready(function () {
 
     $('body').append('<div id="modal-block"></div>')
     modal_garant();
+
+    $(window).on('load',function(){
+        setTimeout(function() {$('.bg-loader').hide();},500)
+    });
 });
+
 
 function modal_garant() {
 
@@ -64,8 +121,7 @@ function modal_garant() {
 }
 
 function popover() {
-
-    var content = 'Гарант сделок - это независимый гарант-сервис в сети интернет, обеспечивая выполнение оговоренных условий с обеих сторон сетевой сделки.Суть работы Гарант-Сервиса заключается в оказании посреднических (гарантийных) услуг в проведении купли-продажи товаров и услуг в интернете с контролем выполнения обязательств по сделке <br> в полном объеме, согласно заключённых договоренностей, каждой из заинтересованных сторон.'
+    var content = $('#popover_time_info').text();
 
     $('.popover-dismiss').popover({
         trigger: 'focus',
@@ -73,3 +129,4 @@ function popover() {
 
     });
 }
+
