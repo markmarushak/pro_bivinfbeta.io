@@ -10,7 +10,7 @@ $(document).ready(function () {
     $('#add-main-groups').submit(function (el) {
         el.preventDefault();
         var data = $(this).serialize();
-        $.get('/admin/add/ad-gr', data, function (data) {
+        $.get('/admin/add/add-group', data, function (data) {
             console.log(data);
             showMainGroup();
             showSubGroup();
@@ -20,7 +20,7 @@ $(document).ready(function () {
     $('#add-sub-groups').submit(function (el) {
         el.preventDefault();
         var data = $(this).serialize();
-        $.get('/admin/add/ad-gr', data, function (data) {
+        $.get('/admin/add/add-group', data, function (data) {
             console.log(data);
             showMainGroup();
             showSubGroup();

@@ -31,9 +31,9 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>'auth'], fu
 
         Route::get('/edit', 'DataController@edit');
         Route::get('/remove', 'DataController@remove');
-        Route::get('/ad-gr','DataController@addMainGroup');
-        Route::post('/ad-con','DataController@addContent');
-        Route::post('/ad-sec','DataController@addSection');
+        Route::get('/add-group','DataController@addMainGroup');
+        Route::post('/add-content','DataController@addContent');
+        Route::post('/add-section','DataController@addSection');
     });
 });
 

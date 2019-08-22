@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="content">
+        <div class="content__container">
+            <p class="content__container__text">
+                ПРИВЕТСТВУЮ
+            </p>
+
+            <ul class="content__container__list">
+                <li class="content__container__list__item">ЛИЧНОСТЬ</li>
+                <li class="content__container__list__item">ВСЕМОГУЩЕСТВЕННЫЙ</li>
+                <li class="content__container__list__item">ЧЕЛОВЕК</li>
+                <li class="content__container__list__item">ВСЕЗНАЮЩИЙ</li>
+            </ul>
+        </div>
+    </div>
     <div class="main">
         <div class="container">
             <div class="row">
@@ -65,6 +79,12 @@
 
         <b>На практике выходит быстрее максимально указанного срока выполнения. Или предупреждаем. И предлагаем иные пути решения каждого вопроса. </b>
     </div>
+    
+    <div id="certificate">
+        <a href="https://drive.google.com/file/d/1JTXFMZ_bI-b07GvGqvdQQm7ZF5PGiftq/view?usp=sharing" target="_blank">ПОЛИТИКА КОНФИДЕЦИАЛЬНОСТИ ДАННЫХ И
+            ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ</a>
+    </div>
+
 @endsection
 
 @section('js')

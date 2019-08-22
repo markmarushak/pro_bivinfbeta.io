@@ -29,14 +29,21 @@ $(document).ready(function () {
     });
 
 
-
     $('.menu button').click(function (el) {
         el.preventDefault();
+
         $('.menu div').removeClass('show');
         $(this).next().toggleClass('show');
         var drop = $(this).next(),
             h = $(document).height();
+        $('body').append('<div class="open-menu"></div>')
+        $('.open-menu').click(function () {
+            $('.menu div').removeClass('show');
+            $(this).remove()
+        })
     });
+
+
 
     $('.menu a').click(function (el) {
         el.preventDefault();
@@ -91,6 +98,34 @@ $(document).ready(function () {
     $(window).on('load',function(){
         setTimeout(function() {$('.bg-loader').hide();},500)
     });
+});
+
+const wrapper = document.querySelector('.m-image');
+const button = document.getElementById('open-page');
+const bars = Array.from(document.querySelectorAll('.m-image__bar'));
+const app = document.getElementById('app');
+const perPage = document.getElementById('pre-page');
+console.log(perPage)
+window.onload = () => {
+    bars.forEach((bar) => {
+        bar.classList.add('flipInY');
+    });
+};
+
+button.addEventListener('click', () => {
+    perPage.classList.add('disabled')
+    bars.forEach((bar) => {
+        bar.classList.remove('flipInY');
+        bar.classList.remove('animated');
+        setTimeout(() => {
+            bar.classList.add('flipInY');
+            bar.classList.add('animated');
+        }, 300);
+    });
+    setTimeout(function () {
+        $('#app').removeClass('disabled')
+        $('.m-image').addClass('disabled')
+    }, 1800)
 });
 
 

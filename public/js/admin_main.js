@@ -18,7 +18,7 @@ $(document).ready(function () {
         var data = $(this).serialize();
         $.ajax({
             method: 'POST',
-            url:'/admin/add/ad-con',
+            url:'/admin/add/add-content',
             dataType: 'JSON',
             data: {_token: CSRF_TOKEN, data:data}
         }).done(function(data){
@@ -29,7 +29,7 @@ $(document).ready(function () {
     $('#add_section').submit(function (el) {
         el.preventDefault();
         var data = $(this).serialize();
-        $.post('/admin/add/ad-sec', {_token: CSRF_TOKEN, data:data}, function (data) {
+        $.post('/admin/add/add-section', {_token: CSRF_TOKEN, data:data}, function (data) {
         });
     });
 

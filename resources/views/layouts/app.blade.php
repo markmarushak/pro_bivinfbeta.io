@@ -22,10 +22,53 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-loader">
-        <div class="loader"></div>
+
+    <div id="pre-page">
+        <div class="page-body">
+            <header>
+                <h1>«ДЕТЕКТИВ ОНЛАЙН»</h1>
+                <span>Решаем любые споры, потому что владеем информацией.</span>
+            </header>
+
+            <p>Любые дынные о Человеке или Организации. Поиск Людей, Телефонов, Автомобилей, Обнародование видео и данных по запросу ( на пример для помощи следствию). </p>
+            <p>Оказываем помощь в Сборе информации по Лучшей стоимости в кратчайшие сроки.p</p>
+
+            <p>Работаем через все Известные системы гарант в интернете. Не видите нужной Вам услуги, стучите в контакты. Мы поможем.</p>
+
+            <button id="open-page" class="btn btn-warning" > Открыть Детектива</button>
+        </div>
+
+
     </div>
-    <div id="app">
+
+    <div class="m-image">
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+        <div class="m-image__bar m-image__bar--animated">
+            <div class="m-image__bar-image"></div>
+        </div>
+    </div>
+
+    <div id="app" class="disabled">
 
 
         <main class="py-4">

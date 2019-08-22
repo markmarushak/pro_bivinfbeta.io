@@ -79,7 +79,25 @@ class DataController extends Controller
 
     public function remove(Request $request)
     {
-        DB::table($this->mainGroup->getTable())->where('id','=',$request->input('id'))->delete();
-        DB::table($this->mainGroup->getTable())->where('main_id','=',$request->input('id'))->delete();
+        $list = array();
+        $id = $request->input('id');
+        $group = DB::table($this->mainGroup->getTable())->where('id','=',$id)->delete();
+        $under_group = DB::table($this->mainGroup->getTable())->where('main_id','=',$id)->get();
+        if (count($under_group) > 0){
+            foreach ($under_group as $item){
+                $list[$item->id] = DB::table($this->content->getTable())->where('group_id','=',$item->id)->delete();
+            }
+            $under_group = DB::table($this->mainGroup->getTable())->where('main_id','=',$id)->delete();
+        }else{
+            DB::table($this->content->getTable())->where('group_id','=',$id)->delete();
+        }
+
+        return response()->json([
+            'group' => $group,
+            'under group' => $under_group,
+            'list item' => $list
+        ]);
     }
+
+
 }
