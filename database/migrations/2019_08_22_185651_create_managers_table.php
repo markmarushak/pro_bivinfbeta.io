@@ -15,6 +15,8 @@ class CreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('chat_id'); // менеджер который нажал старт
+            $table->string('status'); // пределяет система и менеджер по кнопке
             $table->timestamps();
         });
     }
