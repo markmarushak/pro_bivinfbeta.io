@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Conversation;
+use App\Events\NewMessage;
 use App\MainGroup;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Group;
+use App\User;
 
 class PageController extends Controller
 {
@@ -32,4 +36,12 @@ class PageController extends Controller
         return view('admin.add');
     }
 
+
+    public function chat()
+    {
+        $groups = auth()->user()->groups;
+        $users = User::where('id', '<>', auth()->user()->id)->get();
+        $user = auth()->user();
+        return view('chat', ['groups' => $groups, 'users' => $users, 'user' => $user]);
+    }
 }

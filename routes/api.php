@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('api/send_feedback','');
+Route::post('api/sendMessage','ManagerController@createMessage')->name('sendMessage');

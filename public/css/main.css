@@ -10,6 +10,10 @@ body {
 	min-height: 100vh;
 }
 
+.bg-white {
+	color: #333;
+}
+
 body::before {
 	content: '';
 	display: block;

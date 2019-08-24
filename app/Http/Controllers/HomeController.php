@@ -8,6 +8,7 @@ use App\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class HomeController extends Controller
 {
     public $mg;
@@ -40,6 +41,7 @@ class HomeController extends Controller
 
     public function test()
     {
+
         return view('test',[
             'menu' => $this->mg,
             'section' => $this->section->get()->toArray()
@@ -62,5 +64,7 @@ class HomeController extends Controller
         }
         return response()->json($data);
     }
+
+
 
 }

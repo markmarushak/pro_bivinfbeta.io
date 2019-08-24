@@ -65,6 +65,8 @@
                             <p></p>
                         </section>
                     </div>
+
+                    <example-component></example-component>
                 </div>
 
             </div>

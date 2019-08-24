@@ -14,13 +14,29 @@
 
 Auth::routes();
 
+Route::resource('groups', 'GroupController');
+Route::resource('conversations', 'ConversationController');
+
+
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/test', 'HomeController@test')->name('test');
 Route::get('/content', 'HomeController@content');
 Route::get('/section', 'HomeController@section');
 
+Route::group(['prefix'=> 'api'], function (){
+    Route::get('/storeChat', 'ManagerController@storeChat');
+    Route::get('/manager-status', 'ManagerController@status');
+    Route::get('/feedback', 'ManagerController@send');
+    Route::get('/verbation', 'ManagerController@verbation');
+    Route::get('/send', 'ManagerController@store');
+});
+
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>'auth'], function (){
+
+    Route::get('/chat', 'PageController@chat')->name('chat');
+
     Route::get('/','PageController@index')->name('main-group');
 
     Route::group(['prefix' => 'add', 'middleware' => 'auth'], function (){

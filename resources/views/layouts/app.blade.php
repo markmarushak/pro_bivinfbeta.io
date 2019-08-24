@@ -23,50 +23,54 @@
 </head>
 <body>
 
-    <div id="pre-page">
-        <div class="page-body">
-            <header>
-                <h1>«ДЕТЕКТИВ ОНЛАЙН»</h1>
-                <span>Решаем любые споры, потому что владеем информацией.</span>
-            </header>
 
-            <p>Любые дынные о Человеке или Организации. Поиск Людей, Телефонов, Автомобилей, Обнародование видео и данных по запросу ( на пример для помощи следствию). </p>
-            <p>Оказываем помощь в Сборе информации по Лучшей стоимости в кратчайшие сроки.p</p>
+    @if(Route::name('home'))
+        <div id="pre-page">
+            <div class="page-body">
+                <header>
+                    <h1>«ДЕТЕКТИВ ОНЛАЙН»</h1>
+                    <span>Решаем любые споры, потому что владеем информацией.</span>
+                </header>
 
-            <p>Работаем через все Известные системы гарант в интернете. Не видите нужной Вам услуги, стучите в контакты. Мы поможем.</p>
+                <p>Любые дынные о Человеке или Организации. Поиск Людей, Телефонов, Автомобилей, Обнародование видео и данных по запросу ( на пример для помощи следствию). </p>
+                <p>Оказываем помощь в Сборе информации по Лучшей стоимости в кратчайшие сроки.p</p>
 
-            <button id="open-page" class="btn btn-warning" > Открыть Детектива</button>
+                <p>Работаем через все Известные системы гарант в интернете. Не видите нужной Вам услуги, стучите в контакты. Мы поможем.</p>
+
+                <button id="open-page" class="btn btn-warning" > Открыть Детектива</button>
+            </div>
+
+
         </div>
 
 
-    </div>
-
-    <div class="m-image">
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
+        <div class="m-image">
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
+            <div class="m-image__bar m-image__bar--animated">
+                <div class="m-image__bar-image"></div>
+            </div>
         </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-        <div class="m-image__bar m-image__bar--animated">
-            <div class="m-image__bar-image"></div>
-        </div>
-    </div>
+    @endif
 
     <div id="app" class="disabled">
 
