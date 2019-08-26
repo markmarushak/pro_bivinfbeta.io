@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="content">
+    <div class="content d-none d-sm-block">
         <div class="content__container">
             <p class="content__container__text">
                 ПРИВЕТСТВУЮ

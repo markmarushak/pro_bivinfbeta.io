@@ -2,7 +2,7 @@
 	<div>
 		<div class="d-flex justify-content-start mb-4" v-if="data.name == 'manager'">
 			<div class="img_cont_msg">
-				<img src="" class="rounded-circle user_img_msg">
+				<img src="/img/manager.png" class="rounded-circle user_img_msg">
 			</div>
 			<div class="msg_cotainer">
 				{{ data.message }}
@@ -15,7 +15,7 @@
 				<!-- <span class="msg_time_send">{{ data.created_at }}</span> -->
 			</div>
 			<div class="img_cont_msg">
-				<img src="" class="rounded-circle user_img_msg">
+				<img src="/img/user.png" class="rounded-circle user_img_msg">
 			</div>
 
 		</div>

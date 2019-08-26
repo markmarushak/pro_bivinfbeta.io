@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "fs": "0.0.1-security",
         "laravel-echo": "^1.5.4",
         "node-telegram-bot-api": "^0.30.0",
         "pusher-js": "^5.0.0",
