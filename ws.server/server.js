@@ -1,35 +1,15 @@
-// var fs = require('fs')
-// var options = {
-//     key: fs.readFileSync('/home/admin/web/probiv.cf/public_html/ws.server/probiv.cf.key'),
-//     cert: fs.readFileSync('/home/admin/web/probiv.cf/public_html/ws.server/probiv.cf.crt'),
-//     ca: fs.readFileSync('/home/admin/web/probiv.cf/public_html/ws.server/probiv.cf.ca'),
-//     requestCert: true
-// };
-
-// server-side
 const fs = require('fs');
 const server = require('https').createServer({
-    key: fs.readFileSync('/home/admin/conf/web/ssl.probiv.cf.key'),
-    cert: fs.readFileSync('/home/admin/conf/web/ssl.probiv.cf.crt'),
-    ca: fs.readFileSync('/home/admin/conf/web/ssl.probiv.cf.ca'),
+    key: fs.readFileSync('/home/admin/conf/web/ssl.in-touch.ooo.key'),
+    cert: fs.readFileSync('/home/admin/conf/web/ssl.in-touch.ooo.crt'),
+    ca: fs.readFileSync('/home/admin/conf/web/ssl.in-touch.ooo.ca'),
 });
+
 const io = require('socket.io')(server);
 server.listen(6001);
 
-// var server = https.createServer(options).listen(6001);
-
 var TelegramBot = require('node-telegram-bot-api'),
     request = require('request');
-
-// var https = require('https');
-// var express = require('express');
-// var app = express();
-// var server = https.createServer(options, app);
-// var io = require('socket.io')(6001);
-
-// server.listen(6001);
-
-// WARNING: app.listen(80) will NOT work here!
 
 
 // ### TELEGRAM BOT SETTING ### //

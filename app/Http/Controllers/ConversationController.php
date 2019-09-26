@@ -34,7 +34,7 @@ class ConversationController extends Controller
             'resize_keyboard' => true,
             'one_time_keyboard' => false
         ]);
-        dd($status);
+
         if($status == 'close')
         {
 
@@ -77,7 +77,6 @@ class ConversationController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
         if(empty(request('message'))){
             $manager = $this->message($request->message, $request->client_id, $request->status);
 
